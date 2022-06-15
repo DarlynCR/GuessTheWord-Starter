@@ -29,22 +29,17 @@ import com.example.android.guesstheword.databinding.ScoreFragmentBinding
 /**
  * Fragment where the final score is shown, after the game is over
  */
-class ScoreFragment : Fragment() {
+class ScoreFragment : Fragment(R.layout.score_fragment) {
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
+    private lateinit var binding : ScoreFragmentBinding
+    val args = ScoreFragmentArgs.fromBundle(requireArguments())
 
-        // Inflate view and obtain an instance of the binding class.
-        val binding: ScoreFragmentBinding = DataBindingUtil.inflate(
-                inflater,
-                R.layout.score_fragment,
-                container,
-                false
-        )
 
-        return binding.root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding = ScoreFragmentBinding.bind(view)
+
+
     }
 }
