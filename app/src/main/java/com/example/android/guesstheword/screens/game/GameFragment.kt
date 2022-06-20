@@ -50,7 +50,7 @@ class GameFragment : Fragment(R.layout.game_fragment) {
         super.onViewCreated(view, savedInstanceState)
         //Se infla la vista
         binding = GameFragmentBinding.bind(view)
-
+/**/
         Log.i("GameFragment", "Called ViewModelProvider.get")
         //Se inicializa el viewModel
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
